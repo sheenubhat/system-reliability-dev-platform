@@ -5,10 +5,16 @@
 # import argparse
 from flask import Flask, jsonify, request 
 import subprocess
+import json
+import os
 # # import threading
 
 app = Flask(__name__)
 results = {}
+
+OUTPUT_DIR = "ping-automation/output"
+OUTPUT_FILE = os.path.join(OUTPUT_DIR, "results.json")
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 def ping_host(host):
     try:
@@ -24,6 +30,9 @@ def ping_host(host):
     except Exception as e:
         return f"error: {e}"
 
+def have_results():
+    with open(OUTPUT_FILE, "w") as f:
+        json.dump(results, f, indent=2)
 
 @app.route("/ping", methods=["POST"])
 def ping():
@@ -33,7 +42,7 @@ def ping():
     for host in targets:
         results[host] = ping_host(host)
     
-
+    have_results()
     return jsonify(results), 200
 
 
