@@ -2,3 +2,14 @@ INFO Ping automation service started
 INFO /ping called for targets: ['8.8.8.8', '1.1.1.1']
 INFO Ping success for 8.8.8.8
 INFO Ping success for 1.1.1.1
+INFO Ping automation service started
+INFO /ping called for targets: ['8.8.8.8']
+INFO Ping success for 8.8.8.8
+INFO Ping automation service started
+INFO Ping automation service started
+INFO /ping called for targets: ['8.8.8.8']
+INFO Ping success for 8.8.8.8
+INFO /ping called for targets: ['8.8.8.8']
+INFO Ping success for 8.8.8.8
+INFO /ping called for targets: ['8.8.8.8']
+INFO Ping success for 8.8.8.8
