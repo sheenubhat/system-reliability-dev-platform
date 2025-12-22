@@ -1,0 +1,18 @@
+{
+  "file": "log-analyzer/sample.log",
+  "summary": {
+    "INFO": 1,
+    "WARN": 1,
+    "ERROR": 1
+  },
+  "events": [
+    {
+      "level": "WARN",
+      "message": "high latency detected"
+    },
+    {
+      "level": "ERROR",
+      "message": "disk full"
+    }
+  ]
+}
