@@ -5,6 +5,16 @@ import json
 import os
 import sys
 
+LOG_DIR = "runtime-logs"
+LOG_FILE = os.path.join(LOG_DIR, "system.log")
+
+os.makedirs(LOG_DIR, exist_ok=True)
+open(LOG_FILE, "a").close()
+
+def log(message, level="INFO"):
+    with open(LOG_FILE, "a") as f:
+        f.write(f"{level} {message}\n")
+
 OUTPUT_DIR = "port-scanner/output"
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "scan_results.json")
 
@@ -20,19 +30,23 @@ def scan(host, ports):
             rc = sock.connect_ex((host, port))
 
             status = "OPEN" if rc == 0 else "CLOSED"
-            results[str(port)] = status  # stringify for JSON
-            # if result == 0:
-        #     print(f"Port {port}: OPEN")
-        # else:
-        #     print(f"Port {port}: CLOSED")
+            results[str(port)] = status
+
             print(f"Port {port}: {status}")
+
+            if status == "OPEN":
+                log(f"Port {port} open on {host}")
+            else:
+                log(f"Port {port} closed on {host}", level="WARN")
 
         except socket.gaierror:
             results[str(port)] = "INVALID_HOST"
+            log(f"Invalid host {host}", level="ERROR")
             print(f"Port {port}: INVALID HOST")
 
         except Exception as e:
             results[str(port)] = f"ERROR: {e}"
+            log(f"Error scanning port {port} on {host}: {e}", level="ERROR")
             print(f"Port {port}: ERROR")
 
         finally:
@@ -41,11 +55,11 @@ def scan(host, ports):
             except Exception:
                 pass
 
-    return results   
+    return results
 
 def write_json(host, results):
     if results is None:
-        print("ERROR: scan() returned None")
+        log("scan() returned None", level="ERROR")
         sys.exit(1)
 
     data = {
@@ -59,15 +73,14 @@ def write_json(host, results):
     print(f"\nJSON output written to: {OUTPUT_FILE}")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="TCP Port Scanner with JSON Output")
+    parser = argparse.ArgumentParser(description="TCP Port Scanner with Logging and JSON Output")
     parser.add_argument("host", help="Target host")
     parser.add_argument("--ports", required=True, help="Comma-separated ports")
     args = parser.parse_args()
 
     ports = [int(p.strip()) for p in args.ports.split(",")]
 
+    log("Port scanner started")
     scan_results = scan(args.host, ports)
     write_json(args.host, scan_results)
 
-
-        
