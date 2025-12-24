@@ -1,0 +1,14 @@
+- name: Prepare system environment
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Create runtime logs
+      file:
+        path: runtime-logs
+        state: directory
+
+    - name: Ensure system.log exists
+      file:
+        path: runtime-logs/system.log
+        state: touch

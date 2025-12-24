@@ -1,18 +1,22 @@
 {
-  "file": "log-analyzer/sample.log",
+  "file": "runtime-logs/system.log",
   "summary": {
-    "INFO": 1,
-    "WARN": 1,
-    "ERROR": 1
+    "INFO": 19,
+    "WARN": 3,
+    "ERROR": 0
   },
   "events": [
     {
       "level": "WARN",
-      "message": "high latency detected"
+      "message": "port 22 closed on 127.0.0.1"
     },
     {
-      "level": "ERROR",
-      "message": "disk full"
+      "level": "WARN",
+      "message": "port 80 closed on 127.0.0.1"
+    },
+    {
+      "level": "WARN",
+      "message": "port 443 closed on 127.0.0.1"
     }
   ]
 }
