@@ -1,0 +1,13 @@
+{
+  "timestamp": "2025-12-24T12:30:34.354444",
+  "health": "DEGRADED",
+  "ports": {
+    "host": "127.0.0.1",
+    "results": {
+      "8080": "OPEN",
+      "22": "CLOSED",
+      "443": "CLOSED"
+    }
+  },
+  "alerts": []
+}
