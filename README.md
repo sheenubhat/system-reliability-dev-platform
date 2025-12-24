@@ -1,2 +1,2 @@
 # system-reliability-dev-platform
-A suite of tools designed for system-level development, operational automation, infrastructure provisioning, and cloud-native orchestration.
+Thi is a end-to-end reliability automation framework where a single command brings up services, executes health checks, aggregates signals, evaluates system health, and shuts everything down deterministically.
