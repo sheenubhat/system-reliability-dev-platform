@@ -1,11 +1,35 @@
 {
-  "file": "runtime-logs/system.log",
+  "file": "D:\\Automation\\system-reliability-dev-platform\\runtime-logs\\system.log",
   "summary": {
-    "INFO": 19,
-    "WARN": 3,
+    "INFO": 27,
+    "WARN": 9,
     "ERROR": 0
   },
   "events": [
+    {
+      "level": "WARN",
+      "message": "port 22 closed on 127.0.0.1"
+    },
+    {
+      "level": "WARN",
+      "message": "port 80 closed on 127.0.0.1"
+    },
+    {
+      "level": "WARN",
+      "message": "port 443 closed on 127.0.0.1"
+    },
+    {
+      "level": "WARN",
+      "message": "port 22 closed on 127.0.0.1"
+    },
+    {
+      "level": "WARN",
+      "message": "port 80 closed on 127.0.0.1"
+    },
+    {
+      "level": "WARN",
+      "message": "port 443 closed on 127.0.0.1"
+    },
     {
       "level": "WARN",
       "message": "port 22 closed on 127.0.0.1"

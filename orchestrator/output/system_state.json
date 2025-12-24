@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-12-24T12:42:43.845848",
+  "timestamp": "2025-12-24T12:48:31.930426+00:00",
   "health": "UNHEALTHY",
   "ports": {
     "host": "127.0.0.1",
@@ -10,6 +10,15 @@
     }
   },
   "alerts": [
+    "WARN Port 22 closed on 127.0.0.1",
+    "WARN Port 80 closed on 127.0.0.1",
+    "WARN Port 443 closed on 127.0.0.1",
+    "WARN Port 22 closed on 127.0.0.1",
+    "WARN Port 80 closed on 127.0.0.1",
+    "WARN Port 443 closed on 127.0.0.1",
+    "WARN Port 22 closed on 127.0.0.1",
+    "WARN Port 80 closed on 127.0.0.1",
+    "WARN Port 443 closed on 127.0.0.1",
     "WARN Port 22 closed on 127.0.0.1",
     "WARN Port 80 closed on 127.0.0.1",
     "WARN Port 443 closed on 127.0.0.1"

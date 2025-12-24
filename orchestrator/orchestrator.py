@@ -5,7 +5,7 @@ import json
 import subprocess
 import os
 import sys
-from datetime import datetime
+from datetime import datetime, timezone
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -54,7 +54,7 @@ def main():
     health = decide_health(port_data, alerts)
 
     result = {
-        "timestamp": datetime.utcnow().isoformat(),
+        "timestamp": datetime.now(timezone.utc).isoformat(),
         "health": health,
         "ports": port_data,
         "alerts": alerts

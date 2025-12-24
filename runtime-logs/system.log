@@ -20,3 +20,21 @@ INFO Port scanner started
 WARN Port 22 closed on 127.0.0.1
 WARN Port 80 closed on 127.0.0.1
 WARN Port 443 closed on 127.0.0.1
+INFO Port scanner started
+WARN Port 22 closed on 127.0.0.1
+WARN Port 80 closed on 127.0.0.1
+WARN Port 443 closed on 127.0.0.1
+INFO /ping called for targets: ['8.8.8.8', '1.1.1.1']
+INFO Ping success for 8.8.8.8
+INFO Ping success for 1.1.1.1
+INFO Port scanner started
+WARN Port 22 closed on 127.0.0.1
+WARN Port 80 closed on 127.0.0.1
+WARN Port 443 closed on 127.0.0.1
+INFO /ping called for targets: ['8.8.8.8', '1.1.1.1']
+INFO Ping success for 8.8.8.8
+INFO Ping success for 1.1.1.1
+INFO Port scanner started
+WARN Port 22 closed on 127.0.0.1
+WARN Port 80 closed on 127.0.0.1
+WARN Port 443 closed on 127.0.0.1
